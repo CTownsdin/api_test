@@ -11,7 +11,7 @@ var url = 'http://localhost:' + port;
 describe('checking the temperature in Seattle', function() {
   it('should return the temperature', function(done) {
       chai.request(url)
-      .get('/')
+      .get('/current/Seattle')
       .end(function(err,res){
           expect(res.body).to.include.keys('temp');
           done();
